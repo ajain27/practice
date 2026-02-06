@@ -17,6 +17,7 @@ function TODO_WRAPPER() {
     ]);
   };
 
+  // loads the edit form
   const updateTodo = (id) => {
     setTodos(
       todos.map((todo) =>
@@ -25,6 +26,7 @@ function TODO_WRAPPER() {
     );
   };
 
+  // updates the actual task
   const editTask = (task, id) => {
     setTodos(
       todos.map((todo) =>

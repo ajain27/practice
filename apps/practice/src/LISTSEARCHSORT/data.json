@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "genre": "Programming",
+    "price": 34.99,
+    "rating": 4.8,
+    "publishedYear": 2008,
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt",
+    "genre": "Programming",
+    "price": 39.99,
+    "rating": 4.7,
+    "publishedYear": 1999,
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "genre": "Self-Help",
+    "price": 19.99,
+    "rating": 4.6,
+    "publishedYear": 2018,
+    "inStock": false
+  },
+  {
+    "id": 4,
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "genre": "Productivity",
+    "price": 22.5,
+    "rating": 4.5,
+    "publishedYear": 2016,
+    "inStock": true
+  },
+  {
+    "id": 5,
+    "title": "JavaScript: The Good Parts",
+    "author": "Douglas Crockford",
+    "genre": "Programming",
+    "price": 25.0,
+    "rating": 4.3,
+    "publishedYear": 2008,
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "title": "You Don’t Know JS",
+    "author": "Kyle Simpson",
+    "genre": "Programming",
+    "price": 29.99,
+    "rating": 4.7,
+    "publishedYear": 2015,
+    "inStock": false
+  },
+  {
+    "id": 7,
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "genre": "Psychology",
+    "price": 18.75,
+    "rating": 4.4,
+    "publishedYear": 2011,
+    "inStock": true
+  },
+  {
+    "id": 8,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "genre": "Fiction",
+    "price": 14.99,
+    "rating": 4.2,
+    "publishedYear": 1988,
+    "inStock": true
+  }
+]
