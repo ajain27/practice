@@ -2,7 +2,7 @@ import { useState } from "react";
 import PHOTO_GALLERY from "./data.json";
 import "./style.css";
 
-function Photo_Gallery() {
+function PhotoGallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const currentPhoto = PHOTO_GALLERY[currentIndex];
@@ -47,4 +47,4 @@ function Photo_Gallery() {
   );
 }
 
-export default Photo_Gallery;
+export default PhotoGallery;
