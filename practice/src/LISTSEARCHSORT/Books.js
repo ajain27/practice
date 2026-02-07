@@ -6,15 +6,18 @@ function Books() {
   const [data, setData] = useState(books);
   const [searchTerm, setSerahcTerm] = useState("");
 
+  const ASCENDING = "asc";
+  const DESCENDING = "dsc";
+
   const filteredData = data.filter((book) => {
     return book.title.toLowerCase().includes(searchTerm);
   });
 
   const sort = (by) => {
-    if (by === "asc") {
+    if (by === ASCENDING) {
       const sortedData = [...data].sort((a, b) => a.price - b.price);
       setData(sortedData);
-    } else if (by === "dsc") {
+    } else if (by === DESCENDING) {
       const sortedData = [...data].sort((a, b) => b.price - a.price);
       setData(sortedData);
     }
@@ -22,10 +25,10 @@ function Books() {
 
   const handleAscending = () => {
     console.log("sorting");
-    sort("asc");
+    sort(ASCENDING);
   };
   const handleDescending = () => {
-    sort("dsc");
+    sort(DESCENDING);
   };
 
   const inputHandler = (e) => {

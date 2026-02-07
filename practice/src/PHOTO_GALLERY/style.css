@@ -3,20 +3,6 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
-  background: linear-gradient(135deg, #f5f7fa, #e4e7eb);
-}
-
 /* Gallery wrapper */
 .gallery {
   width: 340px;
