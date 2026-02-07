@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Mountain Sunrise",
+    "category": "Nature",
+    "thumbnail": "https://picsum.photos/id/1018/300/200",
+    "image": "https://picsum.photos/id/1018/1200/800",
+    "author": "John Doe",
+    "likes": 120
+  },
+  {
+    "id": 2,
+    "title": "Forest Trail",
+    "category": "Nature",
+    "thumbnail": "https://picsum.photos/id/1015/300/200",
+    "image": "https://picsum.photos/id/1015/1200/800",
+    "author": "Jane Smith",
+    "likes": 98
+  },
+  {
+    "id": 3,
+    "title": "City Skyline",
+    "category": "Urban",
+    "thumbnail": "https://picsum.photos/id/1011/300/200",
+    "image": "https://picsum.photos/id/1011/1200/800",
+    "author": "Alex Brown",
+    "likes": 210
+  },
+  {
+    "id": 4,
+    "title": "Coffee Break",
+    "category": "Lifestyle",
+    "thumbnail": "https://picsum.photos/id/1060/300/200",
+    "image": "https://picsum.photos/id/1060/1200/800",
+    "author": "Emily White",
+    "likes": 76
+  },
+  {
+    "id": 5,
+    "title": "Desert Dunes",
+    "category": "Travel",
+    "thumbnail": "https://picsum.photos/id/1002/300/200",
+    "image": "https://picsum.photos/id/1002/1200/800",
+    "author": "Michael Green",
+    "likes": 134
+  },
+  {
+    "id": 6,
+    "title": "Ocean Waves",
+    "category": "Nature",
+    "thumbnail": "https://picsum.photos/id/1016/300/200",
+    "image": "https://picsum.photos/id/1016/1200/800",
+    "author": "Sarah Lee",
+    "likes": 189
+  }
+]
