@@ -1,5 +1,6 @@
 import "./App.css";
-import FileExplorer from "./FILE_EXPLORER/FileExplorer";
+import Fetch from "./FETCH_AND_PAGINATE/Fetch";
+// import FileExplorer from "./FILE_EXPLORER/FileExplorer";
 // import PhotoGallery from "./PHOTO_GALLERY/PhotoGallery";
 // import Books from "./LISTSEARCHSORT/Books";
 // import TicTacToe from "./TICTACTOE/TicTacToe";
@@ -12,7 +13,8 @@ function App() {
       {/* <Books /> */}
       {/* <TicTacToe /> */}
       {/* <PhotoGallery /> */}
-      <FileExplorer />
+      {/* <FileExplorer /> */}
+      <Fetch />
     </div>
   );
 }

@@ -1,0 +1,32 @@
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todos {
+  margin-top: 50px;
+}
+ul {
+  list-style: none;
+}
+li::first-letter {
+  text-transform: uppercase;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+}
+
+.pageNumbers {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+}
