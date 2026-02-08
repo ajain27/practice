@@ -1,0 +1,57 @@
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  background: #f8fafc;
+  color: #111827;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.container {
+  margin-left: 20px; /* depth indent */
+  padding-left: 12px;
+  border-left: 1px dashed #cbd5f5;
+}
+
+/* ===== ROW (this is where flex belongs) ===== */
+.container > div > div {
+  display: block;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  margin: 2px 0;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* Hover */
+.container > div > div:hover {
+  background: #eef2ff;
+}
+
+/* ===== BUTTON ===== */
+button {
+  margin-left: 6px;
+  border: none;
+  background: #e5e7eb;
+  border-radius: 6px;
+  padding: 3px 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #dbeafe;
+}
