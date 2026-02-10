@@ -5,7 +5,7 @@ import Pagination from "./Pagination";
 function Fetch() {
   const [todos, setTodos] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [todosPerPage] = useState(20);
+  const [todosPerPage] = useState(15);
 
   useEffect(() => {
     let ignore = false;
@@ -31,7 +31,8 @@ function Fetch() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div>
+    <div className="app">
+      <h2>My TODOS</h2>
       <div className="container">
         <div className="todos">
           <Todos todos={currentTodos} />
