@@ -9,6 +9,7 @@ function Form() {
 
   const handleFormSubmission = (e) => {
     e.preventDefault();
+    console.log(formData);
     setFormData({
       name: "",
       email: "",
@@ -19,7 +20,7 @@ function Form() {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: value.trim(),
     }));
   };
 

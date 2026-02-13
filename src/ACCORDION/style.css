@@ -1,0 +1,41 @@
+/* Container */
+.accordion {
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Each item */
+.accordion-item {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Title button */
+.accordion-title {
+  display: flex; /* 1. Use Flexbox on the parent container (the button) */
+  justify-content: space-between; /* 2. Pushes the children to opposite ends */
+  align-items: center; /* 3. Vertically centers the items */
+  width: 100%; /* Optional: Make the button span the full width of its container for a clearer demonstration */
+  padding: 10px; /* Optional: Add some padding for better aesthetics */
+  cursor: pointer;
+}
+
+/* Content */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  background: #f9fafb;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4b5563;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease;
+}
+
+/* When active (you’ll toggle this class in React) */
+.accordion-item.active .accordion-content {
+  max-height: 200px; /* adjust as needed */
+  padding: 15px 20px;
+}
