@@ -57,13 +57,22 @@ function Books() {
             onChange={inputHandler}
             value={searchTerm}
           />
-          <select onChange={handleSortingFromSelect}>
-            <option>Sort by</option>
-            <option value="price">Price</option>
-            <option value="rating">Rating</option>
-          </select>
-          <button onClick={handleAscending}>Sort By Ascending</button>
-          <button onClick={handleDescending}>Sort By Descending</button>
+          <div className="sort-container">
+            <select className="sort-select" onChange={handleSortingFromSelect}>
+              <option value="">Sort by</option>
+              <option value="price">Price</option>
+              <option value="rating">Rating</option>
+            </select>
+          </div>
+
+          <div className="sort-buttons">
+            <button onClick={handleAscending} className="btn btn-asc">
+              Ascending
+            </button>
+            <button onClick={handleDescending} className="btn btn-desc">
+              Descending
+            </button>
+          </div>
         </div>
 
         <div className="books-grid">
