@@ -2,15 +2,19 @@ import { useState } from "react";
 import books from "./data.json";
 import "./style.css";
 import Book from "./Book";
+import useDebounce from "./hooks/useDebounce";
+
 function Books() {
   const [data, setData] = useState(books);
   const [searchTerm, setSerahcTerm] = useState("");
+
+  const debounceValue = useDebounce(searchTerm, 1000);
 
   const ASCENDING = "asc";
   const DESCENDING = "dsc";
 
   const filteredData = data.filter((book) => {
-    return book.title.toLowerCase().includes(searchTerm);
+    return book.title.toLowerCase().includes(debounceValue);
   });
 
   const sort = (by) => {
@@ -24,7 +28,6 @@ function Books() {
   };
 
   const handleAscending = () => {
-    console.log("sorting");
     sort(ASCENDING);
   };
   const handleDescending = () => {

@@ -42,7 +42,7 @@ function TicTacToe() {
 
   const reset = () => {
     setBoard(initialBoard);
-    setIsNextX(isNextX);
+    setIsNextX(true);
   };
 
   const getMessage = () => {
