@@ -3,12 +3,13 @@ import books from "./data.json";
 import "./style.css";
 import Book from "./Book";
 import useDebounce from "./hooks/useDebounce";
+import Controls from "./Controls";
 
 function Books() {
   const [data, setData] = useState(books);
   const [searchTerm, setSerahcTerm] = useState("");
 
-  const debounceValue = useDebounce(searchTerm, 1000);
+  const debounceValue = useDebounce(searchTerm, 500);
 
   const ASCENDING = "asc";
   const DESCENDING = "dsc";
@@ -50,31 +51,13 @@ function Books() {
   return (
     <div>
       <div className="books-container">
-        <div className="books-controls">
-          <input
-            placeholder="Search books..."
-            id="name"
-            onChange={inputHandler}
-            value={searchTerm}
-          />
-          <div className="sort-container">
-            <select className="sort-select" onChange={handleSortingFromSelect}>
-              <option value="">Sort by</option>
-              <option value="price">Price</option>
-              <option value="rating">Rating</option>
-            </select>
-          </div>
-
-          <div className="sort-buttons">
-            <button onClick={handleAscending} className="btn btn-asc">
-              Ascending
-            </button>
-            <button onClick={handleDescending} className="btn btn-desc">
-              Descending
-            </button>
-          </div>
-        </div>
-
+        <Controls
+          inputHandler={inputHandler}
+          searchTerm={searchTerm}
+          handleSortingFromSelect={handleSortingFromSelect}
+          handleAscending={handleAscending}
+          handleDescending={handleDescending}
+        />
         <div className="books-grid">
           {filteredData.map((book) => (
             <Book book={book} />

@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function Add({ add }) {
   const [inputValue, setInputValue] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!inputValue) return;

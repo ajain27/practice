@@ -8,17 +8,15 @@ function Pagination({ todosPerPage, totalTodos, paginate }) {
 
   return (
     <div>
-      <div>
-        <nav>
-          <ul className="pagination">
-            {pageNumber.map((number) => (
-              <li className="pageNumbers" onClick={() => paginate(number)}>
-                {number}
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+      <nav>
+        <ul className="pagination">
+          {pageNumber.map((number) => (
+            <li className="pageNumbers" onClick={() => paginate(number)}>
+              {number}
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   );
 }
