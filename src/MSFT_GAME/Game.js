@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import "./style.css";
 import json from "./DATA.json";
+import shuffleArray from "./utils";
 
 const allValues = json.flatMap((item) => Object.values(item));
+const shuffledItems = shuffleArray(allValues);
 
 export default function Game() {
   const [options, setOptions] = useState([]);
@@ -11,7 +13,7 @@ export default function Game() {
   const [matched, setMatched] = useState(new Set());
 
   useEffect(() => {
-    setOptions(allValues);
+    setOptions(shuffledItems);
   }, [options]);
 
   function isCorrectMatch(option1, option2) {
