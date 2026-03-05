@@ -7,7 +7,6 @@ function List({ list, addFolder, deleteNode, addFile }) {
     <div className="container">
       {list?.map((node) => (
         <div key={node.id}>
-          {/* // check if the node is a folder then display the expand collapse icon */}
           {node.isFolder && (
             <span
               className={`icon ${!node.isFolder ? "placeholder" : ""}`}
