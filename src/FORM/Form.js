@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import "./style.css";
 
 function Form() {
@@ -7,9 +7,20 @@ function Form() {
     email: "",
   });
 
+  const isNameValid = formData.name.length > 0 && formData.name.length < 10;
+  const isEmailValid = formData.email.length > 0 && formData.email.length < 10;
+
+  const isFormValid = useMemo(() => {
+    return isNameValid && isEmailValid;
+  }, [isNameValid, isEmailValid]);
+
   const handleFormSubmission = (e) => {
     e.preventDefault();
-    console.log(formData);
+    console.log({
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+    });
+
     setFormData({
       name: "",
       email: "",
@@ -20,7 +31,7 @@ function Form() {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value.trim(),
+      [name]: value,
     }));
   };
 
@@ -34,6 +45,7 @@ function Form() {
           placeholder="Enter name"
           onChange={handleChange}
         />
+
         <input
           type="text"
           name="email"
@@ -41,7 +53,10 @@ function Form() {
           placeholder="Enter email"
           onChange={handleChange}
         />
-        <button>Enter</button>
+
+        <button type="submit" disabled={!isFormValid}>
+          Enter
+        </button>
       </form>
     </div>
   );
