@@ -1,0 +1,17 @@
+.tabs-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.tabs {
+    margin: 20px;
+    padding: 20px;
+    height: 40px;
+}
+.content {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+}
