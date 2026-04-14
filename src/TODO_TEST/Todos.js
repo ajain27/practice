@@ -1,5 +1,3 @@
-import React from "react";
-
 function Todos({ task, deleteTodo }) {
   return (
     <div>

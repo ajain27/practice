@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Todos from "./Todos";
-import Pagination from "./Pagination";
+// import Todos from "./Todos";
+// import Pagination from "./Pagination";
 
 function Fetch() {
   const [todos, setTodos] = useState([]);
