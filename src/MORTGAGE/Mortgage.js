@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 
 export default function MortgageCalculator() {
   const [homePrice, setHomePrice] = useState("");
-  const [downPayment, setDownPayment] = useState("");
+  const [downPaymentPercent, setDownPaymentPercent] = useState("");
   const [interestRate, setInterestRate] = useState("");
   const [loanTerm, setLoanTerm] = useState("");
   const [propertyTax, setPropertyTax] = useState("");
@@ -11,7 +11,7 @@ export default function MortgageCalculator() {
 
   const breakdown = useMemo(() => {
     const price = parseFloat(homePrice);
-    const down = parseFloat(downPayment) || 0;
+    const downPercent = parseFloat(downPaymentPercent) || 0;
     const annualRate = parseFloat(interestRate);
     const years = parseInt(loanTerm, 10);
     const annualTax = parseFloat(propertyTax) || 0;
@@ -24,14 +24,15 @@ export default function MortgageCalculator() {
       Number.isNaN(years) ||
       price <= 0 ||
       years <= 0 ||
-      down < 0 ||
-      down > price ||
+      downPercent < 0 ||
+      downPercent > 100 ||
       annualRate < 0
     ) {
       return null;
     }
 
-    const loanAmount = price - down;
+    const downPaymentAmount = (price * downPercent) / 100;
+    const loanAmount = price - downPaymentAmount;
     const monthlyRate = annualRate / 100 / 12;
     const totalPayments = years * 12;
 
@@ -57,6 +58,8 @@ export default function MortgageCalculator() {
     const totalInterest = totalMortgagePayment - loanAmount;
 
     return {
+      downPaymentAmount,
+      downPaymentPercent: downPercent,
       loanAmount,
       monthlyPrincipalAndInterest,
       monthlyTax,
@@ -69,7 +72,7 @@ export default function MortgageCalculator() {
     };
   }, [
     homePrice,
-    downPayment,
+    downPaymentPercent,
     interestRate,
     loanTerm,
     propertyTax,
@@ -105,11 +108,12 @@ export default function MortgageCalculator() {
           </div>
 
           <div>
-            <label style={styles.label}>Down Payment</label>
+            <label style={styles.label}>Down Payment (%)</label>
             <input
               type="number"
-              value={downPayment}
-              onChange={(e) => setDownPayment(e.target.value)}
+              step="0.01"
+              value={downPaymentPercent}
+              onChange={(e) => setDownPaymentPercent(e.target.value)}
               style={styles.input}
             />
           </div>
@@ -182,6 +186,11 @@ export default function MortgageCalculator() {
             </div>
 
             <div style={styles.breakdownGrid}>
+              <div style={styles.breakdownCard}>
+                <span style={styles.breakdownTitle}>Down Payment</span>
+                <strong>{formatCurrency(breakdown.downPaymentAmount)}</strong>
+              </div>
+
               <div style={styles.breakdownCard}>
                 <span style={styles.breakdownTitle}>Loan Amount</span>
                 <strong>{formatCurrency(breakdown.loanAmount)}</strong>
